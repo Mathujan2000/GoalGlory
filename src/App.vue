@@ -1,17 +1,16 @@
 <template>
-  <HomePage />
+  <div>
+    <AppHeader />
+    <router-view />
+    <AppFooter />
+  </div>
 </template>
 
-<script>
-import HomePage from './components/HomePage.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HomePage
-  }
-}
+<script setup>
+import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
 </script>
+
 
 <style>
 #app {
