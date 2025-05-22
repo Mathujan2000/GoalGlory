@@ -21,7 +21,7 @@
         <div class="text-center mt-2">
           <router-link
               :to="`/players/${speler.id}`"
-              class="btn btn-primary btn-sm"
+              class="btn btn-success btn-sm"
           >
             Show Details
           </router-link>

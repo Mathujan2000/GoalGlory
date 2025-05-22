@@ -26,6 +26,22 @@ const isNavCollapsed = ref(false);
   </b-navbar>
 </template>
 
-<style scoped>
-/* Optional: Add custom styles for the navbar */
+<style>
+/* Ensure nav-link text is white */
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: #f8f9fa !important; /* Optional: Slightly lighter color on hover */
+}
+</style><style>
+/* Ensure nav-link text is white */
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: #f8f9fa !important; /* Optional: Slightly lighter color on hover */
+}
 </style>
