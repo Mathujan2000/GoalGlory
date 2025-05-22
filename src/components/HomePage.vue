@@ -41,7 +41,7 @@
 <script setup>
 import { BButton, BCol, BContainer, BRow } from 'bootstrap-vue-next';
 import action from '@/assets/Calltoaction.png';
-import about from '@/assets/about.png'; // adjust path if needed
+import about from '@/assets/aboutnew.png'; // adjust path if needed
 </script>
 
 <style scoped>

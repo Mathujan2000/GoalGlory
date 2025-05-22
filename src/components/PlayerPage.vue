@@ -1,9 +1,6 @@
 <template>
-  <div class="container mt-4">
-    <h1 class="mb-4">Player Details</h1>
-
-    <!-- Zoekveld -->
-    <div class="mb-4">
+  <div>
+    <div class="search-bar-container mt-4 mb-4">
       <input
           type="text"
           v-model="zoekterm"
@@ -29,45 +26,50 @@
             Show Details
           </router-link>
         </div>
-
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
 
 export default {
   data() {
     return {
       spelers: [],
       zoekterm: '',
-    }
+    };
   },
   computed: {
     gefilterdeSpelers() {
-      const zoek = this.zoekterm.toLowerCase()
+      const zoek = this.zoekterm.toLowerCase();
       return this.spelers.filter(speler =>
           speler.naam.toLowerCase().includes(zoek)
-      )
-    }
+      );
+    },
   },
   created() {
-    axios.get('http://127.0.0.1:8000/api/spelers')
+    axios
+        .get('http://127.0.0.1:8000/api/spelers')
         .then(response => {
-          this.spelers = response.data
+          this.spelers = response.data;
         })
-        .catch(err => console.error('Fout bij ophalen spelers:', err))
-  }
-}
+        .catch(err => console.error('Fout bij ophalen spelers:', err));
+  },
+};
 </script>
 
 <style scoped>
+.search-bar-container {
+  padding: 0 1rem;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+  padding: 1rem;
 }
 
 .card {
@@ -78,6 +80,7 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
+  border: 2px solid green;
 }
 
 .card h5 {

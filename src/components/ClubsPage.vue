@@ -32,7 +32,7 @@
             lg="4"
             class="mb-4"
         >
-          <div class="p-3 shadow rounded bg-light text-start">
+          <div class="club-card p-3 shadow rounded bg-light text-start">
             <h5 class="mb-1 text-dark">{{ club.naam }}</h5>
             <p class="mb-0"><strong>Country:</strong> {{ club.land }}</p>
             <p class="mb-0"><strong>Competition:</strong> {{ club.competitie }}</p>
@@ -71,3 +71,14 @@ const filteredClubs = computed(() => {
   return clubs.value.filter(club => club.competitie === selectedCompetition.value);
 });
 </script>
+
+<style scoped>
+.club-card {
+  border: 2px solid green;
+  transition: transform 0.2s;
+}
+
+.club-card:hover {
+  transform: translateY(-3px);
+}
+</style>

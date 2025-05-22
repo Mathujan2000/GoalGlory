@@ -56,7 +56,14 @@
           ></b-form-textarea>
         </b-form-group>
 
-        <b-button type="submit" variant="success">Send Message</b-button>
+        <div class="d-flex gap-2">
+          <b-button type="submit" variant="success" :disabled="isLoading">
+            {{ isLoading ? 'Sending...' : 'Send Message' }}
+          </b-button>
+          <b-button type="button" variant="outline-secondary" @click="resetForm">
+            Reset
+          </b-button>
+        </div>
       </b-form>
 
       <b-alert
@@ -83,29 +90,54 @@ import {
   BFormInput,
   BFormTextarea,
   BButton,
-  BAlert
+  BAlert,
 } from 'bootstrap-vue-next';
 
 const form = ref({
   name: '',
   email: '',
   subject: '',
-  message: ''
+  message: '',
 });
 
 const successMessage = ref('');
+const isLoading = ref(false);
 
 function handleSubmit() {
-  // Normally you'd send this data to a backend API
-  console.log('Contact Form Submitted:', form.value);
+  isLoading.value = true;
 
-  // Simulate success
-  successMessage.value = 'Your message has been sent. Thank you!';
+  setTimeout(() => {
+    successMessage.value = 'Your message has been sent. Thank you!';
+    form.value = {
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    };
+    isLoading.value = false;
+  }, 1000);
+}
+
+function resetForm() {
   form.value = {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   };
+  successMessage.value = '';
 }
 </script>
+
+<style scoped>
+.form-control,
+.form-select {
+  border: 2px solid #198754;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #146c43;
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+}
+</style>

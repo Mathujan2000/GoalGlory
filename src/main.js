@@ -5,6 +5,7 @@ import App from './App.vue';
 import router from './router';
 
 // Import Bootstrap and BootstrapVueNext CSS
+import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue-next/dist/bootstrap-vue-next.css'
 

@@ -25,25 +25,27 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
+import { BCard } from 'bootstrap-vue-next';
 
 export default {
   name: 'PlayerDetail',
+  components: { BCard },
   data() {
     return {
       speler: null,
-    }
+    };
   },
   created() {
-    const id = this.$route.params.id
+    const id = this.$route.params.id;
     axios
         .get(`http://127.0.0.1:8000/api/spelers/${id}`)
         .then(response => {
-          this.speler = response.data
+          this.speler = response.data;
         })
         .catch(error => {
-          console.error('Fout bij ophalen speler:', error)
-        })
+          console.error('Fout bij ophalen speler:', error);
+        });
   },
-}
+};
 </script>
