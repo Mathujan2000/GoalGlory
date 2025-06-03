@@ -4,11 +4,11 @@
       <h2 class="mb-4 text-success">Football Clubs</h2>
 
       <!-- Filter Dropdown -->
-      <div class="mb-4 d-flex align-items-center">
+      <div class="mb-4 d-flex align-items-center flex-wrap flex-md-nowrap">
         <label for="competitionFilter" class="me-2 fw-semibold">Filter by Competition:</label>
         <select
             id="competitionFilter"
-            class="form-select w-auto"
+            class="form-select competition-select"
             v-model="selectedCompetition"
         >
           <option value="">All</option>
@@ -57,7 +57,7 @@ onMounted(async () => {
     const response = await axios.get('http://127.0.0.1:8000/api/clubs');
     clubs.value = response.data;
 
-    // Extract unique competitions for filter dropdown
+    // Extract unique competitions
     competitions.value = [...new Set(clubs.value.map(club => club.competitie))];
   } catch (error) {
     console.error('Error fetching clubs:', error);
@@ -80,5 +80,23 @@ const filteredClubs = computed(() => {
 
 .club-card:hover {
   transform: translateY(-3px);
+}
+
+/* Responsive dropdown styling */
+.competition-select {
+  width: auto;
+  min-width: 150px;
+}
+
+@media (max-width: 768px) {
+  .competition-select {
+    width: 50%;
+    margin-top: 10px;
+  }
+
+  .d-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 </style>

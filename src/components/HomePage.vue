@@ -2,25 +2,27 @@
   <div class="page-container">
 
     <!-- Main content -->
-    <section class="bg-light text-center py-5 flex-grow-1">
+    <section class="bg-light text-center py-5 flex-grow-1" role="main" aria-label="Main introduction">
       <b-container>
-        <h2 class="display-5 mb-3 text-success">Your Ultimate Football Companion</h2>
-        <p class="lead text-secondary">Clubs, Player, PlayerDetail.</p>
-        <b-button variant="success" size="lg">Join the Club</b-button>
+        <h1 class="display-5 mb-3 text-success">Your Ultimate Football Companion</h1>
+        <p class="lead text-dark">Clubs, Player, PlayerDetail.</p>
+        <b-button variant="success" size="lg" aria-label="Join the Football Club">Join the Club</b-button>
       </b-container>
     </section>
 
     <!-- About Section -->
-    <section class="py-5 flex-grow-1">
+    <section class="py-5 flex-grow-1" aria-label="About football">
       <b-container>
         <b-row class="align-items-center">
           <b-col md="6">
-            <router-link to="/players">
+            <router-link to="/players" aria-label="View players page">
               <img
                   :src="action"
                   class="img-fluid rounded shadow"
-                  alt="Football action"
-                  style="cursor: pointer;"
+                  alt="Football players in action on the field"
+                  fetchpriority=high
+                  width="600"
+                  height="400"
               />
             </router-link>
           </b-col>
@@ -28,7 +30,10 @@
             <img
                 :src="about"
                 class="img-fluid rounded shadow"
-                alt="about"
+                alt="About football clubs and players"
+                fetchpriority="high"
+                width="600"
+                height="400"
             />
           </b-col>
         </b-row>
@@ -40,8 +45,8 @@
 
 <script setup>
 import { BButton, BCol, BContainer, BRow } from 'bootstrap-vue-next';
-import action from '@/assets/Calltoaction.png';
-import about from '@/assets/aboutnew.png'; // adjust path if needed
+import action from '@/assets/Calltoaction.webp';
+import about from '@/assets/aboutnew.webp';
 </script>
 
 <style scoped>

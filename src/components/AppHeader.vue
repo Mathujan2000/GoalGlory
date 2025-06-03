@@ -1,46 +1,43 @@
 <script setup>
-import logo from '@/assets/GoalGlory.png'; // Adjust path if needed
-import { BContainer, BButton } from 'bootstrap-vue-next';
+import logo from '@/assets/GoalGlory.webp';
 import AppNavbar from './AppNavbar.vue';
+import { BButton, BContainer } from 'bootstrap-vue-next';
 </script>
 
 <template>
-  <header class="bg-success py-3">
-    <b-container fluid>
+  <header class="bg-success py-3" role="banner">
+    <BContainer fluid>
       <div class="d-flex align-items-center justify-content-between">
-        <!-- Logo -->
         <div class="logo-container">
           <img
               :src="logo"
               alt="GoalLine logo"
               class="header-logo"
+              width="100"
+              height="120"
+              loading="lazy"
+              decoding="async"
+              fetchpriority="low"
           />
         </div>
-
-        <!-- Navbar and Join Button -->
         <div class="d-flex align-items-center ms-auto">
           <AppNavbar />
-          <b-button variant="light" class="fw-bold ms-3 px-4 text-success">JOIN</b-button>
+          <BButton variant="success" class="fw-bold ms-3 px-4 text-white" aria-label="Join GoalLine football club">JOIN</BButton>
         </div>
       </div>
-    </b-container>
+    </BContainer>
   </header>
 </template>
 
-<style>
-/* Adjust logo size */
+<style scoped>
 .header-logo {
-  height: 120px; /* Adjust size as needed */
+  height: 120px;
 }
 
 @media (max-width: 768px) {
   .logo-container {
-    justify-content: center;gi
+    justify-content: center;
     width: auto;
-  }
-
-  .navbar-container {
-    justify-content: flex-end;
   }
 }
 </style>
