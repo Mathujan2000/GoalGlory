@@ -27,17 +27,20 @@
             </router-link>
           </b-col>
           <b-col md="6">
-            <img
-                :src="about"
-                class="img-fluid rounded shadow"
-                alt="About football clubs and players"
-                fetchpriority="high"
-                width="600"
-                height="400"
-            />
-          </b-col>
-        </b-row>
-      </b-container>
+          <template>
+    <img
+      :src="about"
+      :srcset="`${imgSmall} 400w, ${imgMedium} 800w, ${imgDefault} 1200w`"
+      sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px"
+      class="img-fluid rounded shadow"
+      alt="About football clubs and players"
+      width="600"
+      height="400"
+    />
+  </template>
+            </b-col>
+          </b-row>
+        </b-container>
     </section>
 
   </div>
