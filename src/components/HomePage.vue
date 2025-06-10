@@ -27,17 +27,16 @@
             </router-link>
           </b-col>
           <b-col md="6">
-          <template>
-    <img
-      :src="about"
-      :srcset="`${imgSmall} 400w, ${imgMedium} 800w, ${imgDefault} 1200w`"
-      sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px"
-      class="img-fluid rounded shadow"
-      alt="About football clubs and players"
-      width="600"
-      height="400"
-    />
-  </template>
+  <img
+  :src="about"
+  :srcset="srcsetAbout"
+  sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px"
+  class="img-fluid rounded shadow"
+  alt="About football clubs and players"
+  width="600"
+  height="400"
+/>
+
             </b-col>
           </b-row>
         </b-container>
@@ -50,6 +49,10 @@
 import { BButton, BCol, BContainer, BRow } from 'bootstrap-vue-next';
 import action from '@/assets/Calltoaction.webp';
 import about from '@/assets/aboutnew.webp';
+import imgSmall from '@/assets/about-small.webp';
+import imgMedium from '@/assets/about-medium.webp';
+const srcsetAbout = `${imgSmall} 400w, ${imgMedium} 800w, ${about} 1200w`;
+
 </script>
 
 <style scoped>
