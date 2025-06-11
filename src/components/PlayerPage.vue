@@ -11,7 +11,7 @@
 
     <div class="grid-container">
       <div
-          v-for="speler in gefilterdeSpelers"
+          v-for="speler in paginatedSpelers"
           :key="speler.id"
           class="card"
       >
@@ -28,6 +28,23 @@
         </div>
       </div>
     </div>
+
+    <div class="pagination-buttons mt-4">
+      <button
+          class="btn btn-secondary"
+          :disabled="currentPage === 1"
+          @click="previousPage"
+      >
+        Previous
+      </button>
+      <button
+          class="btn btn-secondary"
+          :disabled="currentPage === totalPages"
+          @click="nextPage"
+      >
+        Next
+      </button>
+    </div>
   </div>
 </template>
 
@@ -39,6 +56,8 @@ export default {
     return {
       spelers: [],
       zoekterm: '',
+      currentPage: 1,
+      itemsPerPage: 20,
     };
   },
   computed: {
@@ -47,6 +66,26 @@ export default {
       return this.spelers.filter(speler =>
           speler.naam.toLowerCase().includes(zoek)
       );
+    },
+    paginatedSpelers() {
+      const start = (this.currentPage - 1) * this.itemsPerPage;
+      const end = start + this.itemsPerPage;
+      return this.gefilterdeSpelers.slice(start, end);
+    },
+    totalPages() {
+      return Math.ceil(this.gefilterdeSpelers.length / this.itemsPerPage);
+    },
+  },
+  methods: {
+    nextPage() {
+      if (this.currentPage < this.totalPages) {
+        this.currentPage++;
+      }
+    },
+    previousPage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+      }
     },
   },
   created() {
@@ -94,6 +133,12 @@ export default {
 
 .btn {
   align-self: flex-start;
+}
+
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 @media (max-width: 992px) {

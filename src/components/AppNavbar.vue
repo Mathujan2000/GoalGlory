@@ -20,10 +20,18 @@ const isNavCollapsed = ref(false);
     />
     <BCollapse id="nav-collapse" is-nav v-model="isNavCollapsed">
       <BNavbarNav>
-        <BNavItem to="/" exact class="fw-semibold mx-2" active-class="text-decoration-underline">Home</BNavItem>
-        <BNavItem to="/players" class="fw-semibold mx-2" active-class="text-decoration-underline">Players</BNavItem>
-        <BNavItem to="/clubs" class="fw-semibold mx-2" active-class="text-decoration-underline">Clubs</BNavItem>
-        <BNavItem to="/contact" class="fw-semibold mx-2" active-class="text-decoration-underline">Contact</BNavItem>
+        <BNavItem to="/" exact class="fw-semibold mx-2" active-class="text-decoration-underline">
+          Home
+        </BNavItem>
+        <BNavItem to="/players" class="fw-semibold mx-2" active-class="text-decoration-underline">
+          Players
+        </BNavItem>
+        <BNavItem to="/clubs" class="fw-semibold mx-2" active-class="text-decoration-underline">
+          Clubs
+        </BNavItem>
+        <BNavItem to="/contact" class="fw-semibold mx-2" active-class="text-decoration-underline">
+          Contact Us
+        </BNavItem>
       </BNavbarNav>
     </BCollapse>
   </BNavbar>

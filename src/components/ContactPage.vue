@@ -1,7 +1,7 @@
 <template>
   <section class="py-5">
     <b-container>
-      <h2 class="mb-4 text-success">Contact Us</h2>
+      <h1 class="mb-4 text-success">Contact Us</h1>
 
       <!-- Contact Information -->
       <div class="mb-5">
