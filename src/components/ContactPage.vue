@@ -5,7 +5,7 @@
 
       <!-- Contact Information -->
       <div class="mb-5">
-        <p><strong>Email:</strong> contact@goalline.com</p>
+        <p><strong>Email:</strong> contact@goalglory.com</p>
         <p><strong>Phone:</strong> +31 6 12345678</p>
         <p><strong>Address:</strong> Stadionweg 100, 1077 XX Amsterdam, Netherlands</p>
       </div>

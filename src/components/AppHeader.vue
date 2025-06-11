@@ -11,7 +11,7 @@ import { BButton, BContainer } from 'bootstrap-vue-next';
         <div class="logo-container">
           <img
               :src="logo"
-              alt="GoalLine logo"
+              alt="GoalGlory logo"
               class="header-logo"
               width="100"
               height="120"
@@ -22,7 +22,7 @@ import { BButton, BContainer } from 'bootstrap-vue-next';
         </div>
         <div class="d-flex align-items-center ms-auto">
           <AppNavbar />
-          <BButton variant="success" class="fw-bold ms-3 px-4 text-white" aria-label="Join GoalLine football club">JOIN</BButton>
+          <BButton variant="success" class="fw-bold ms-3 px-4 text-white" aria-label="Join GoalGlory football club">JOIN</BButton>
         </div>
       </div>
     </BContainer>

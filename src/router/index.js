@@ -11,7 +11,7 @@ const routes = [
         path: '/',
         component: HomePage,
         meta: {
-            title: 'Home - GoalLine',
+            title: 'Home - GoalGlory',
             description: 'Your ultimate football companion. Explore clubs, players, and more.',
         },
     },
@@ -19,7 +19,7 @@ const routes = [
         path: '/players',
         component: PlayerPage,
         meta: {
-            title: 'Players - GoalLine',
+            title: 'Players - GoalGlory',
             description: 'Discover football players and their details.',
         },
     },
@@ -27,7 +27,7 @@ const routes = [
         path: '/players/:id',
         component: PlayerDetail,
         meta: {
-            title: 'Player Details - GoalLine',
+            title: 'Player Details - GoalGlory',
             description: 'Detailed information about individual football players.',
         },
     },
@@ -35,7 +35,7 @@ const routes = [
         path: '/clubs',
         component: ClubsPage,
         meta: {
-            title: 'Clubs - GoalLine',
+            title: 'Clubs - GoalGlory',
             description: 'Explore football clubs and their competitions.',
         },
     },
@@ -43,8 +43,8 @@ const routes = [
         path: '/contact',
         component: ContactPage,
         meta: {
-            title: 'Contact Us - GoalLine',
-            description: 'Get in touch with GoalLine for inquiries and support.',
+            title: 'Contact Us - GoalGlory',
+            description: 'Get in touch with GoalGlory for inquiries and support.',
         },
     },
 ];
